@@ -2,16 +2,23 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="home.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playpen+Sans+Thai:wght@100..800&display=swap" rel="stylesheet">    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <img class="header-logo" alt="logo" src="assets/mango.avif" />
-      Mango Steakhouse
-      <nav>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+    <header class="header">
+      <a class="header-home-link" href="index.html">
+        <img class="header-logo" alt="logo" src="assets/mango.png" />
+        <div class="header-text-container">
+          <span class="header-text-1">mango's</span>
+          <span class="header-text-2">STEAKHOUSE</span>
+        </div>
+      </a>
+      <nav class="header-nav">
+        <a class="header-nav-link" href="menu.html">MENU</a>
+        <a class="header-nav-link" href="about.html">ABOUT</a>
+        <a class="header-nav-link" href="contact.html">CONTACT</a>
       </nav>
     </header>
     <h1>Our Story</h1>
@@ -28,5 +35,40 @@
       customer, backed by the Mango Mandate: if you do not finish your meal 
       with a smile on your face, you are free to leave without having to pay.
     </p>
+    <footer class="footer">
+      <h2 class="footer-heading">Business hours</h2>
+      <table>
+        <tr>
+          <td class="business-hours-day">Mon-Fri:</td>
+          <td>10:00am - 12:00am</td>
+        </tr>
+        <tr>
+          <td class="business-hours-day">Sat:</td>
+          <td>10:00am - 1:00am</td>
+        </tr>
+        <tr>
+          <td class="business-hours-day">Sun:</td>
+          <td>10:00am - 11:00pm</td>
+        </tr>
+      </table>
+      <h2 class="footer-heading">Follow us</h2>
+      <div class="social-logos-container">
+        <a href="https://www.facebook.com/RickAstley/">
+          <img class="social-logo" alt="facebook" src="assets/facebook.png" />
+        </a>
+        <a href="https://x.com/rickastley">
+          <img class="social-logo" alt="x" src="assets/x.png" />
+        </a>
+        <a href="https://www.instagram.com/officialrickastley">
+          <img class="social-logo" alt="instagram" src="assets/instagram.png" />
+        </a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+          <img class="social-logo" alt="youtube" src="assets/youtube.png" />
+        </a>
+        <a href="https://www.tiktok.com/@rickastleyofficial">
+          <img class="social-logo" alt="tiktok" src="assets/tiktok.png" />
+        </a>
+      </div>
+    </footer>
   </body>
 </html>
