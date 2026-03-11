@@ -148,6 +148,7 @@ when the screen is resized to be wider. */
 }
 
 .hero-image {
+  display: block;
   width: 100%;
   min-height: 20rem;
   object-fit: cover;
