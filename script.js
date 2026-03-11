@@ -18,7 +18,11 @@ function sliderAdvance(n) {
   for (let i = 0; i < sliderImages.length; i++) {
     if (sliderImages[i].classList.contains("current-slider-image")) {
       sliderImages[i].className = "slider-image";
-      sliderImages[(i + n) % sliderImages.length].className = "slider-image current-slider-image";
+      let sum = i + n;
+      while (sum < 0) {
+        sum += sliderImages.length;
+      }
+      sliderImages[sum % sliderImages.length].className = "slider-image current-slider-image";
       break;
     }
   }
