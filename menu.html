@@ -2,12 +2,18 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Fonts: Montserrat, Playpen Sans Thai -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playpen+Sans+Thai:wght@100..800&display=swap" rel="stylesheet">    <link rel="stylesheet" href="styles.css" />
+    <!-- Hamburger menu icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <header class="header">
+      <a href="javascript:void(0);" class="nav-menu-icon" id="nav-menu-icon">
+        <i class="fa fa-bars"></i>
+      </a>
       <a class="header-home-link" href="index.html">
         <img class="header-logo" alt="logo" src="assets/mango.png" />
         <div class="header-text-container">
@@ -15,68 +21,82 @@
           <span class="header-text-2">STEAKHOUSE</span>
         </div>
       </a>
-      <nav class="header-nav">
+      <nav class="header-nav" id="header-nav">
         <a class="header-nav-link" href="menu.html">MENU</a>
         <a class="header-nav-link" href="about.html">ABOUT</a>
         <a class="header-nav-link" href="contact.html">CONTACT</a>
       </nav>
     </header>
-    <h1>Menu</h1>
-    <h2>Appetizers</h2>
-    <div class="menu-grid">
-      <div class="menu-item-card">
-        <img alt="Crunchy Fried Shrimp" src="assets/crunchy-fried-shrimp.jpg" />
-        <div class="menu-item-card-text-container">
-          <h3>Crunchy Fried Shrimp</h3>
-          <div class="price">$9.99</div>
+    <nav class="menu-nav-closed" id="menu-nav">
+      <a class="menu-nav-link" href="menu.html">Menu</a>
+      <a class="menu-nav-link" href="about.html">About</a>
+      <a class="menu-nav-link" href="contact.html">Contact</a>
+    </nav>
+    <main class="page-main-content">
+      <h1 class="page-heading">MENU</h1>
+
+      <section class="menu-section">
+        <h2 class="menu-section-heading">Appetizers</h2>
+        <!-- <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p> -->
+        <div class="menu-grid">
+          <div class="menu-item-card">
+            <img alt="Crunchy Fried Shrimp" src="assets/crunchy-fried-shrimp.jpg" />
+            <div class="menu-item-card-text-container">
+              <h3>Crunchy Fried Shrimp</h3>
+              <div class="price">$9.99</div>
+            </div>
+          </div>
+          <div class="menu-item-card">
+            <img alt="Boneless Wings" src="assets/boneless-wings.jpg" />
+            <div class="menu-item-card-text-container">
+              <h3>Boneless Wings</h3>
+              <div class="price">$10.99</div>
+            </div>
+          </div>
+          <div class="menu-item-card">
+            <img alt="Spinach Artichoke Dip" src="assets/spinach-artichoke-dip.jpg" />
+            <div class="menu-item-card-text-container">
+              <h3>Spinach Artichoke Dip</h3>
+              <div class="price">$7.99</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="menu-item-card">
-        <img alt="Boneless Wings" src="assets/boneless-wings.jpg" />
-        <div class="menu-item-card-text-container">
-          <h3>Boneless Wings</h3>
-          <div class="price">$10.99</div>
+      </section>
+
+      <section class="menu-section">
+        <h2 class="menu-section-heading">Steaks</h2>
+        <div class="menu-grid">
+          <div class="menu-item-card">
+            <img alt="Ribeye" src="assets/ribeye.jpg" />
+            <div class="menu-item-card-text-container">
+              <h3 class="menu-item-name">Ribeye</h3>
+              <div class="price">$26.99</div>
+            </div>
+          </div>
+          <div class="menu-item-card">
+            <img alt="Filet Mignon" src="assets/filet-mignon.avif" />
+            <div class="menu-item-card-text-container">
+              <h3>Filet Mignon</h3>
+              <div class="price">$24.99</div>
+            </div>
+          </div>
+          <div class="menu-item-card">
+            <img alt="New York Strip" src="assets/new-york-strip.jpg" />
+            <div class="menu-item-card-text-container">
+              <h3>New York Strip</h3>
+              <div class="price">$24.99</div>
+            </div>
+          </div>
+          <div class="menu-item-card">
+            <img alt="Sirloin" src="assets/sirloin.webp" />
+            <div class="menu-item-card-text-container">
+              <h3>Sirloin</h3>
+              <div class="price">$21.99</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="menu-item-card">
-        <img alt="Spinach Artichoke Dip" src="assets/spinach-artichoke-dip.jpg" />
-        <div class="menu-item-card-text-container">
-          <h3>Spinach Artichoke Dip</h3>
-          <div class="price">$7.99</div>
-        </div>
-      </div>
-    </div>
-    <h2>Steaks</h2>
-    <div class="menu-grid">
-      <div class="menu-item-card">
-        <img alt="Ribeye" src="assets/ribeye.jpg" />
-        <div class="menu-item-card-text-container">
-          <h3>Ribeye</h3>
-          <div class="price">$26.99</div>
-        </div>
-      </div>
-      <div class="menu-item-card">
-        <img alt="Filet Mignon" src="assets/filet-mignon.avif" />
-        <div class="menu-item-card-text-container">
-          <h3>Filet Mignon</h3>
-          <div class="price">$24.99</div>
-        </div>
-      </div>
-      <div class="menu-item-card">
-        <img alt="New York Strip" src="assets/new-york-strip.jpg" />
-        <div class="menu-item-card-text-container">
-          <h3>New York Strip</h3>
-          <div class="price">$24.99</div>
-        </div>
-      </div>
-      <div class="menu-item-card">
-        <img alt="Sirloin" src="assets/sirloin.webp" />
-        <div class="menu-item-card-text-container">
-          <h3>Sirloin</h3>
-          <div class="price">$21.99</div>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
     <footer class="footer">
       <h2 class="footer-heading">Business hours</h2>
       <table>
@@ -112,5 +132,6 @@
         </a>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

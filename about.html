@@ -2,12 +2,18 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Fonts: Montserrat, Playpen Sans Thai -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playpen+Sans+Thai:wght@100..800&display=swap" rel="stylesheet">    <link rel="stylesheet" href="styles.css" />
+    <!-- Hamburger menu icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <header class="header">
+      <a href="javascript:void(0);" class="nav-menu-icon" id="nav-menu-icon">
+        <i class="fa fa-bars"></i>
+      </a>
       <a class="header-home-link" href="index.html">
         <img class="header-logo" alt="logo" src="assets/mango.png" />
         <div class="header-text-container">
@@ -15,26 +21,40 @@
           <span class="header-text-2">STEAKHOUSE</span>
         </div>
       </a>
-      <nav class="header-nav">
+      <nav class="header-nav" id="header-nav">
         <a class="header-nav-link" href="menu.html">MENU</a>
         <a class="header-nav-link" href="about.html">ABOUT</a>
         <a class="header-nav-link" href="contact.html">CONTACT</a>
       </nav>
     </header>
-    <h1>Our Story</h1>
-    <p>
-      John Mango was just seven years old when his uncle, world-famous chef 
-      Gordon Mango, showed him around the kitchen at Mango Steakhouse. It was 
-      at that moment John developed an obsession with all things cooking. He 
-      spent the next several years of his life training under his uncle and 
-      traveling the world to discover what makes food truly great. 
-    </p>
-    <p>
-      Having inherited the restaurant from his uncle, John is committed to 
-      delivering world-class culinary experiences to each and every 
-      customer, backed by the Mango Mandate: if you do not finish your meal 
-      with a smile on your face, you are free to leave without having to pay.
-    </p>
+    <nav class="menu-nav-closed" id="menu-nav">
+      <a class="menu-nav-link" href="menu.html">Menu</a>
+      <a class="menu-nav-link" href="about.html">About</a>
+      <a class="menu-nav-link" href="contact.html">Contact</a>
+    </nav>
+    <article class="page-main-content">
+      <h1 class="page-heading">Our Story</h1>
+      <p>
+        John Mango was just seven years old when his uncle, world-famous chef 
+        Gordon Mango, showed him around the kitchen at Mango Steakhouse. It was 
+        at that moment that John became obsessed with all things cooking. He 
+        spent the next several years of his life training under his uncle and 
+        traveling the world to discover what makes food truly great. 
+      </p>
+      <p>
+        Having inherited the restaurant from his uncle, John is committed to 
+        delivering world-class culinary experiences to each and every 
+        customer, backed by the Mango Mandate: if you do not finish your meal 
+        with a smile on your face, you are free to leave without having to pay.
+      </p>
+      <p>
+        John and his uncle are also the founders of the Mango Foundation, 
+        which donates food to impoverished families and underserved 
+        communities throughout America. 5% of all company profits go straight 
+        into the Mango Foundation. When you eat at Mango's, you make the world 
+        (and your stomach) a better place.
+      </p>
+    </article>
     <footer class="footer">
       <h2 class="footer-heading">Business hours</h2>
       <table>
@@ -70,5 +90,6 @@
         </a>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

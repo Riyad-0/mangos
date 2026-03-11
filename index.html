@@ -2,12 +2,18 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Fonts: Montserrat, Playpen Sans Thai -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playpen+Sans+Thai:wght@100..800&display=swap" rel="stylesheet">    <link rel="stylesheet" href="styles.css" />
+    <!-- Hamburger menu icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <header class="header">
+      <a href="javascript:void(0);" class="nav-menu-icon" id="nav-menu-icon">
+        <i class="fa fa-bars"></i>
+      </a>
       <a class="header-home-link" href="index.html">
         <img class="header-logo" alt="logo" src="assets/mango.png" />
         <div class="header-text-container">
@@ -15,12 +21,17 @@
           <span class="header-text-2">STEAKHOUSE</span>
         </div>
       </a>
-      <nav class="header-nav">
+      <nav class="header-nav" id="header-nav">
         <a class="header-nav-link" href="menu.html">MENU</a>
         <a class="header-nav-link" href="about.html">ABOUT</a>
         <a class="header-nav-link" href="contact.html">CONTACT</a>
       </nav>
     </header>
+    <nav class="menu-nav-closed" id="menu-nav">
+      <a class="menu-nav-link" href="menu.html">Menu</a>
+      <a class="menu-nav-link" href="about.html">About</a>
+      <a class="menu-nav-link" href="contact.html">Contact</a>
+    </nav>
     <div class="hero">
       <img class="hero-image" src="assets/hero-ribeye2.jpg" />
       <div class="hero-foreground-container">
@@ -28,6 +39,23 @@
           <h1 class="hero-foreground-heading">mango's</h1>
           <a class="view-menu-button" href="menu.html">VIEW MENU</a>
           <!-- <div>Dine here</div> -->
+        </div>
+      </div>
+    </div>
+    <div class="gallery-section">
+      <h2 class="gallery-heading">LOOK INSIDE</h2>
+      <div class="slider">
+        <img class="slider-image current-slider-image" alt="dining area" src="assets/gallery0.jpg" />
+        <img class="slider-image" alt="mezzanine" src="assets/gallery1.jpg" />
+        <img class="slider-image" alt="steak and potato wedges" src="assets/gallery2.jpg" />
+        <img class="slider-image" alt="dining area" src="assets/gallery3.jpg" />
+        <img class="slider-image" alt="porterhouse steak and spinach artichoke dip" src="assets/gallery4.jpg" />
+        <img class="slider-image" alt="bar" src="assets/gallery5.jpg" />
+
+        <!-- Next and previous buttons -->
+        <div class="slider-foreground">
+          <a class="slider-prev-button" id="slider-prev-button">&#10094;</a>
+          <a class="slider-next-button" id="slider-next-button">&#10095;</a>
         </div>
       </div>
     </div>
@@ -66,5 +94,6 @@
         </a>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

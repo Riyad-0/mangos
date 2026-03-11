@@ -2,12 +2,18 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Fonts: Montserrat, Playpen Sans Thai -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playpen+Sans+Thai:wght@100..800&display=swap" rel="stylesheet">    <link rel="stylesheet" href="styles.css" />
+    <!-- Hamburger menu icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <header class="header">
+      <a href="javascript:void(0);" class="nav-menu-icon" id="nav-menu-icon">
+        <i class="fa fa-bars"></i>
+      </a>
       <a class="header-home-link" href="index.html">
         <img class="header-logo" alt="logo" src="assets/mango.png" />
         <div class="header-text-container">
@@ -15,23 +21,30 @@
           <span class="header-text-2">STEAKHOUSE</span>
         </div>
       </a>
-      <nav class="header-nav">
+      <nav class="header-nav" id="header-nav">
         <a class="header-nav-link" href="menu.html">MENU</a>
         <a class="header-nav-link" href="about.html">ABOUT</a>
         <a class="header-nav-link" href="contact.html">CONTACT</a>
       </nav>
     </header>
-    <h1>Contact</h1>
-    <form>
-      <label for="name">Name:</label><br />
-      <input name="name" /><br />
-      <label for="email">Email:</label><br />
-      <input name="email" type="email" /><br />
-      <label for="message">Message:</label><br />
-      <input name="message" /><br />
-      <button type="submit">Submit</button>
-    </form>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.7354113969427!2d-73.96710402524286!3d40.76784383419705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258eb899f0889%3A0xb5e90aa7d877ee1f!2sHunter%20College!5e0!3m2!1sen!2sus!4v1773014318224!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <nav class="menu-nav-closed" id="menu-nav">
+      <a class="menu-nav-link" href="menu.html">Menu</a>
+      <a class="menu-nav-link" href="about.html">About</a>
+      <a class="menu-nav-link" href="contact.html">Contact</a>
+    </nav>
+    <main class="page-main-content contact-page-main-content">
+      <h1 class="page-heading">Contact</h1>
+      <form class="contact-form">
+        <label for="name">Name:</label><br />
+        <input name="name" /><br />
+        <label for="email">Email:</label><br />
+        <input name="email" type="email" /><br />
+        <label for="message">Message:</label><br />
+        <textarea name="message"></textarea><br />
+        <button class="contact-form-submit-button" type="submit">Submit</button>
+      </form>
+      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.7354113969427!2d-73.96710402524286!3d40.76784383419705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258eb899f0889%3A0xb5e90aa7d877ee1f!2sHunter%20College!5e0!3m2!1sen!2sus!4v1773014318224!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </main>
     <footer class="footer">
       <h2 class="footer-heading">Business hours</h2>
       <table>
@@ -67,5 +80,6 @@
         </a>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -15,6 +15,13 @@ https://tiktokbrandhub.com/downloads
 ### Hero
 https://benjaminsteakhouse.com/wp-content/uploads/Rib_Eye_178-scaled.jpg
 https://benjaminsteakhouse.com/wp-content/uploads/Rib_Eye_178.jpg
+### Gallery
+https://benjaminsteakhouse.com/wp-content/uploads/2022_0720BenjaminSteakhouseWestchester-41-HDRM-scaled.jpg
+https://benjaminsteakhouse.com/wp-content/uploads/Mezzanine.jpg
+https://benjaminsteakhouse.com/wp-content/uploads/slide-steak.jpg
+https://benjaminsteakhouse.com/wp-content/uploads/Main-Dining-Room-1.jpg
+https://benjaminsteakhouse.com/wp-content/uploads/Porterhouse.1.jpg
+https://benjaminsteakhouse.com/wp-content/uploads/Bar-1-1-scaled.jpg
 ### Menu
 https://diethood.com/wp-content/uploads/2021/02/ribeye-steak-5.jpg
 https://www.dadcooksdinner.com/wp-content/uploads/2024/07/Grilled-New-York-Strip-Steaks-16x9-1200x-0833-2048x1152.jpg
@@ -23,3 +30,8 @@ https://thehungrywaitress.com/wp-content/uploads/2025/06/Grilled-Sirlion-3.jpg
 https://www.allrecipes.com/thmb/dI7tAF6NGd0Ymo8_fUAAwqnZT1Y=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/AR-216969-crunchy-fried-shrimp-DDMFS-4x3-ce19238c015447f1be90f8871409844f.jpg
 https://mccormick.widen.net/content/t6sjy7wk6w/jpeg/franks_boneless_wings_og_home_plated_2024_1376x774.jpg?crop=true&anchor=0
 https://www.onceuponachef.com/images/2022/11/spinach-artichoke-dip-1-2.jpg
+## Guides
+Hamburger menu, responsive nav.
+https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
+Slider.
+https://www.w3schools.com/howto/howto_js_slideshow.asp
