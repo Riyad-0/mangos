@@ -21,12 +21,17 @@
           <span class="header-text-2">STEAKHOUSE</span>
         </div>
       </a>
-      <nav class="header-nav" id="header-nav">
-        <a class="header-nav-link" href="index.html">HOME</a>
-        <a class="header-nav-link" href="menu.html">MENU</a>
-        <a class="header-nav-link" href="about.html">ABOUT</a>
-        <a class="header-nav-link" href="contact.html">CONTACT</a>
-      </nav>
+      <div class="header-right">
+        <nav class="header-nav" id="header-nav">
+          <a class="header-nav-link" href="index.html">HOME</a>
+          <a class="header-nav-link" href="menu.html">MENU</a>
+          <a class="header-nav-link" href="about.html">ABOUT</a>
+          <a class="header-nav-link" href="contact.html">CONTACT</a>
+        </nav>
+        <button class="cart-button" id="cart-button" href="javascript:void(0);">
+          <img class="cart-image" alt="shopping cart" src="assets/cart.png" />
+        </button>
+      </div>
     </header>
     <nav class="menu-nav-closed" id="menu-nav">
       <a class="menu-nav-link" href="index.html">Home</a>
@@ -34,32 +39,57 @@
       <a class="menu-nav-link" href="about.html">About</a>
       <a class="menu-nav-link" href="contact.html">Contact</a>
     </nav>
+    <div class="cart-shown" id="cart">
+      <div class="cart-close-button-container">
+        <button class="cart-close-button" id="cart-close-button">
+          <img alt="close" src="assets/close.svg" />
+        </button>
+      </div>
+
+      <h1 class="page-heading">CART</h1>
+
+      <div>Nothing in cart.</div>
+      <div class="cart-items">
+        <div class="cart-item">
+          <img alt="Ribeye" src="assets/ribeye.jpg" />
+          <h3>Ribeye</h3>
+        </div>
+      </div>
+      
+    </div>
     <main class="page-main-content">
       <h1 class="page-heading">MENU</h1>
-
       <section class="menu-section">
         <h2 class="menu-section-heading">Appetizers</h2>
-        <!-- <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p> -->
         <div class="menu-grid">
           <div class="menu-item-card">
             <img alt="Crunchy Fried Shrimp" src="assets/crunchy-fried-shrimp.jpg" />
             <div class="menu-item-card-text-container">
-              <h3>Crunchy Fried Shrimp</h3>
+              <h3 class="menu-item-name">Crunchy Fried Shrimp</h3>
               <div class="price">$9.99</div>
+              <div class="add-button-container">
+                <button class="add-button">ADD</button>
+              </div>
             </div>
           </div>
           <div class="menu-item-card">
             <img alt="Boneless Wings" src="assets/boneless-wings.jpg" />
             <div class="menu-item-card-text-container">
-              <h3>Boneless Wings</h3>
+              <h3 class="menu-item-name">Boneless Wings</h3>
               <div class="price">$10.99</div>
+              <div class="add-button-container">
+                <button class="add-button">ADD</button>
+              </div>
             </div>
           </div>
           <div class="menu-item-card">
             <img alt="Spinach Artichoke Dip" src="assets/spinach-artichoke-dip.jpg" />
             <div class="menu-item-card-text-container">
-              <h3>Spinach Artichoke Dip</h3>
+              <h3 class="menu-item-name">Spinach Artichoke Dip</h3>
               <div class="price">$7.99</div>
+              <div class="add-button-container">
+                <button class="add-button">ADD</button>
+              </div>
             </div>
           </div>
         </div>
@@ -73,27 +103,39 @@
             <div class="menu-item-card-text-container">
               <h3 class="menu-item-name">Ribeye</h3>
               <div class="price">$26.99</div>
+              <div class="add-button-container">
+                <button class="add-button">ADD</button>
+              </div>
             </div>
           </div>
           <div class="menu-item-card">
             <img alt="Filet Mignon" src="assets/filet-mignon.avif" />
             <div class="menu-item-card-text-container">
-              <h3>Filet Mignon</h3>
+              <h3 class="menu-item-name">Filet Mignon</h3>
               <div class="price">$24.99</div>
+              <div class="add-button-container">
+                <button class="add-button">ADD</button>
+              </div>
             </div>
           </div>
           <div class="menu-item-card">
             <img alt="New York Strip" src="assets/new-york-strip.jpg" />
             <div class="menu-item-card-text-container">
-              <h3>New York Strip</h3>
+              <h3 class="menu-item-name">New York Strip</h3>
               <div class="price">$24.99</div>
+              <div class="add-button-container">
+                <button class="add-button">ADD</button>
+              </div>
             </div>
           </div>
           <div class="menu-item-card">
             <img alt="Sirloin" src="assets/sirloin.webp" />
             <div class="menu-item-card-text-container">
-              <h3>Sirloin</h3>
+              <h3 class="menu-item-name">Sirloin</h3>
               <div class="price">$21.99</div>
+              <div class="add-button-container">
+                <button class="add-button">ADD</button>
+              </div>
             </div>
           </div>
         </div>
@@ -135,5 +177,6 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script src="menu.js"></script>
   </body>
 </html>

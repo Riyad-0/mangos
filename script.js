@@ -1,3 +1,5 @@
+let cartItems = new Map();
+
 function toggleNavMenu() {
   let menuNav = document.getElementById("menu-nav");
   if (menuNav !== null) {
@@ -13,31 +15,49 @@ function toggleNavMenu() {
   }
 }
 
-function sliderAdvance(n) {
-  const sliderImages = document.getElementsByClassName("slider-image");
-  for (let i = 0; i < sliderImages.length; i++) {
-    if (sliderImages[i].classList.contains("current-slider-image")) {
-      sliderImages[i].className = "slider-image";
-      let sum = i + n;
-      while (sum < 0) {
-        sum += sliderImages.length;
-      }
-      sliderImages[sum % sliderImages.length].className = "slider-image current-slider-image";
-      break;
-    }
+function toggleCart() {
+  const cartElement = document.getElementById("cart");
+  if (cartElement.className === "cart-hidden") {
+    showCart();
+  } else {
+    hideCart();
   }
 }
 
-function sliderPrev() {
-  sliderAdvance(-1);
+let bodyChildren = [];
+let removed = null;
+function showCart() {
+  bodyChildren = [];
+  for (let i = 0; i < document.body.children.length; i++) {
+    bodyChildren.push(document.body.children[i]);
+  }
+  const cartElement = document.getElementById("cart");
+  cartElement.className = "cart-shown";
+  // document.getElementById("main").remove();
+  const toRemove = cartElement.nextElementSibling;
+  console.log(toRemove);
+  if (toRemove !== null) {
+    toRemove.remove();
+  }
+  removed = toRemove;
+  // document.body.removeChild(document.getElementById("main"));
+  // document.body.innerHTML = cartElement;
 }
 
-function sliderNext() {
-  sliderAdvance(1);
+function hideCart() {
+  // const cartElement = document.getElementById("cart");
+  // cartElement.className = "cart-hidden";
+  console.log(removed);
+  const cartElement = document.getElementById("cart");
+  cartElement.className = "cart-hidden";
+  if (removed !== null) {
+    cartElement.after(removed);
+    removed = null;
+  }
+  // document.body.replaceChildren(...bodyChildren);
 }
-
 
 document.getElementById("nav-menu-icon").addEventListener("click", toggleNavMenu);
 
-document.getElementById("slider-prev-button").addEventListener("click", sliderPrev);
-document.getElementById("slider-next-button").addEventListener("click", sliderNext);
+document.getElementById("cart-button").addEventListener("click", toggleCart);
+document.getElementById("cart-close-button").addEventListener("click", hideCart);

@@ -30,6 +30,9 @@ https://thehungrywaitress.com/wp-content/uploads/2025/06/Grilled-Sirlion-3.jpg
 https://www.allrecipes.com/thmb/dI7tAF6NGd0Ymo8_fUAAwqnZT1Y=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/AR-216969-crunchy-fried-shrimp-DDMFS-4x3-ce19238c015447f1be90f8871409844f.jpg
 https://mccormick.widen.net/content/t6sjy7wk6w/jpeg/franks_boneless_wings_og_home_plated_2024_1376x774.jpg?crop=true&anchor=0
 https://www.onceuponachef.com/images/2022/11/spinach-artichoke-dip-1-2.jpg
+
+## Cart
+https://uxwing.com/shopping-cart-white-icon/
 ## Guides
 Hamburger menu, responsive nav.
 https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
