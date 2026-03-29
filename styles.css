@@ -553,9 +553,12 @@ when the screen is resized to be wider. */
   margin-bottom: 32px;
 }
 
-.add-button-container {
+.menu-item-card-bottom {
   display: flex;
   justify-content: end;
+  column-gap: 16px;
+  align-items: baseline;
+  font-weight: bold;
 }
 
 .add-button {

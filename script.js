@@ -65,6 +65,7 @@ function hideCart() {
     cartElement.after(removed);
     removed = null;
   }
+  updateMenuItemCounts();
   // document.body.replaceChildren(...bodyChildren);
 }
 
@@ -140,11 +141,26 @@ function onUpdateCartItems() {
     if (cartItemCount <= 9) {
       cartItemCounter.innerText = cartItemCount;
     } else {
-      cartItemCounter.innerText = "~";
+      cartItemCounter.innerText = "";
     }
   } else {
     cartItemCounter.className = "cart-item-counter-hidden";
     cartItemCounter.innerText = "";
+  }
+  updateMenuItemCounts();
+}
+
+function updateMenuItemCounts() {
+  for (const menuItemCardElement of document.getElementsByClassName("menu-item-card")) {
+    const nameElement = menuItemCardElement.getElementsByClassName("menu-item-name")[0];
+    const name = nameElement.innerText;
+    const cartItem = cartItems.get(name);
+    const menuItemCountElement = menuItemCardElement.getElementsByClassName("menu-item-count")[0];
+    if (cartItem === undefined) {
+      menuItemCountElement.innerText = "";
+    } else {
+      menuItemCountElement.innerText = `${cartItem.quantity} in cart`;
+    }
   }
 }
 

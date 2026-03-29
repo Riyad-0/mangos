@@ -1,4 +1,5 @@
 function onClickAdd(e) {
+  e.stopPropagation();
   const nameElement = e.currentTarget.getElementsByClassName("menu-item-name")[0];
   const name = nameElement.innerText;
 
