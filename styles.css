@@ -190,6 +190,10 @@ when the screen is resized to be wider. */
 .cart-item {
   display: flex;
   border-radius: 5px;
+  width: 400px;
+  max-width: 100%;
+  /* width: 100%; */
+  /* max-width: 20%; */
   /* width: 200px;
   height: 100px; */
   background: #f2efea;
@@ -207,6 +211,8 @@ when the screen is resized to be wider. */
 
 .cart-item-right {
   display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
   padding: 16px;
 }
 
@@ -214,15 +220,24 @@ when the screen is resized to be wider. */
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 200px;
   row-gap: 8px;
+  font-size: 0.9rem;
+}
+
+.cart-item-name {
+  font-size: 1rem;
+}
+
+.cart-item-quantity {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1ch;
 }
 
 .remove-cart-item-button-container {
   display: flex;
   height: 100%;
   align-items: center;
-  margin: 0 0 0 64px;
 }
 
 .remove-cart-item-button {

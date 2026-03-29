@@ -71,16 +71,18 @@ function hideCart() {
 function newCartItemElement(name, price, quantity, image) {
   const total = (price * quantity / 100).toFixed(2);
   const unitPrice = quantity > 1 ?
-    ` ($${(price / 100).toFixed(2)} each)` :
+    `($${(price / 100).toFixed(2)} each)` :
     "";
 
   return `<div class="cart-item" id="cart-item-${name}">
     <img alt="${image.alt}" src="${image.src}" />
     <div class="cart-item-right">
       <div class="cart-item-text-container">
-        <h3>${name}</h3>
+        <h3 class="cart-item-name">${name}</h3>
         <div class="cart-item-total">$${total}</div>
-        <div class="cart-item-quantity">Quantity: ${quantity}${unitPrice}</div>
+        <div class="cart-item-quantity">
+          <span>Quantity: ${quantity}</span> <span>${unitPrice}</span>
+        </div>
       </div>
       <div class="remove-cart-item-button-container">
         <button class="remove-cart-item-button" data-name="${name}">
