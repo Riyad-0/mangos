@@ -29,7 +29,8 @@
           <a class="header-nav-link" href="contact.html">CONTACT</a>
         </nav>
         <button class="cart-button" id="cart-button" href="javascript:void(0);">
-          <img class="cart-image" alt="shopping cart" src="assets/cart.png" />
+          <img class="cart-image" alt="shopping cart" src="assets/cart.svg" />
+          <div class="cart-item-counter-hidden" id="cart-item-counter"></div>
         </button>
       </div>
     </header>
@@ -39,23 +40,23 @@
       <a class="menu-nav-link" href="about.html">About</a>
       <a class="menu-nav-link" href="contact.html">Contact</a>
     </nav>
-    <div class="cart-shown" id="cart">
+    <div class="cart-hidden" id="cart">
       <div class="cart-close-button-container">
         <button class="cart-close-button" id="cart-close-button">
-          <img alt="close" src="assets/close.svg" />
+          <img alt="close" src="assets/x-icon-black.svg" />
         </button>
       </div>
 
       <h1 class="page-heading">CART</h1>
-
-      <div>Nothing in cart.</div>
-      <div class="cart-items">
-        <div class="cart-item">
-          <img alt="Ribeye" src="assets/ribeye.jpg" />
-          <h3>Ribeye</h3>
+      <div class="cart-main">
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total-empty" id="cart-total">Nothing in cart</div>
+        <div class="clear-cart-button-container">
+          <button class="clear-cart-button-hidden" id="clear-cart-button">
+            CLEAR CART
+          </button>
         </div>
       </div>
-      
     </div>
     <main class="page-main-content">
       <h1 class="page-heading">MENU</h1>

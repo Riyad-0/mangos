@@ -21,12 +21,18 @@
           <span class="header-text-2">STEAKHOUSE</span>
         </div>
       </a>
-      <nav class="header-nav" id="header-nav">
-        <a class="header-nav-link" href="index.html">HOME</a>
-        <a class="header-nav-link" href="menu.html">MENU</a>
-        <a class="header-nav-link" href="about.html">ABOUT</a>
-        <a class="header-nav-link" href="contact.html">CONTACT</a>
-      </nav>
+      <div class="header-right">
+        <nav class="header-nav" id="header-nav">
+          <a class="header-nav-link" href="index.html">HOME</a>
+          <a class="header-nav-link" href="menu.html">MENU</a>
+          <a class="header-nav-link" href="about.html">ABOUT</a>
+          <a class="header-nav-link" href="contact.html">CONTACT</a>
+        </nav>
+        <button class="cart-button" id="cart-button" href="javascript:void(0);">
+          <img class="cart-image" alt="shopping cart" src="assets/cart.svg" />
+          <div class="cart-item-counter-hidden" id="cart-item-counter"></div>
+        </button>
+      </div>
     </header>
     <nav class="menu-nav-closed" id="menu-nav">
       <a class="menu-nav-link" href="index.html">Home</a>
@@ -34,6 +40,24 @@
       <a class="menu-nav-link" href="about.html">About</a>
       <a class="menu-nav-link" href="contact.html">Contact</a>
     </nav>
+    <div class="cart-hidden" id="cart">
+      <div class="cart-close-button-container">
+        <button class="cart-close-button" id="cart-close-button">
+          <img alt="close" src="assets/x-icon-black.svg" />
+        </button>
+      </div>
+
+      <h1 class="page-heading">CART</h1>
+      <div class="cart-main">
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-total-empty" id="cart-total">Nothing in cart</div>
+        <div class="clear-cart-button-container">
+          <button class="clear-cart-button-hidden" id="clear-cart-button">
+            CLEAR CART
+          </button>
+        </div>
+      </div>
+    </div>
     <article class="page-main-content">
       <h1 class="page-heading">Our Story</h1>
       <p>

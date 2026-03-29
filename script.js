@@ -1,4 +1,20 @@
-let cartItems = new Map();
+
+function loadCartItems() {
+  const serializedCartItems = localStorage.getItem("cartItems");
+  if (serializedCartItems === null) {
+    return new Map();
+  } else {
+    return new Map(JSON.parse(serializedCartItems));
+  }
+}
+
+const clearCartButton = document.getElementById("clear-cart-button");
+
+const cartItems = loadCartItems();
+
+function storeCartItems() {
+  localStorage.setItem("cartItems", JSON.stringify([...cartItems]));
+}
 
 function toggleNavMenu() {
   let menuNav = document.getElementById("menu-nav");
@@ -33,20 +49,15 @@ function showCart() {
   }
   const cartElement = document.getElementById("cart");
   cartElement.className = "cart-shown";
-  // document.getElementById("main").remove();
   const toRemove = cartElement.nextElementSibling;
   console.log(toRemove);
   if (toRemove !== null) {
     toRemove.remove();
   }
   removed = toRemove;
-  // document.body.removeChild(document.getElementById("main"));
-  // document.body.innerHTML = cartElement;
 }
 
 function hideCart() {
-  // const cartElement = document.getElementById("cart");
-  // cartElement.className = "cart-hidden";
   console.log(removed);
   const cartElement = document.getElementById("cart");
   cartElement.className = "cart-hidden";
@@ -57,7 +68,93 @@ function hideCart() {
   // document.body.replaceChildren(...bodyChildren);
 }
 
-document.getElementById("nav-menu-icon").addEventListener("click", toggleNavMenu);
+function newCartItemElement(name, price, quantity, image) {
+  const total = (price * quantity / 100).toFixed(2);
+  const unitPrice = quantity > 1 ?
+    ` ($${(price / 100).toFixed(2)} each)` :
+    "";
 
+  return `<div class="cart-item" id="cart-item-${name}">
+    <img alt="${image.alt}" src="${image.src}" />
+    <div class="cart-item-right">
+      <div class="cart-item-text-container">
+        <h3>${name}</h3>
+        <div class="cart-item-total">$${total}</div>
+        <div class="cart-item-quantity">Quantity: ${quantity}${unitPrice}</div>
+      </div>
+      <div class="remove-cart-item-button-container">
+        <button class="remove-cart-item-button" data-name="${name}">
+          <img alt="remove" src="assets/x-icon-white.svg" />
+        </button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function onClickRemove(e) {
+  const removeButton = e.currentTarget;
+  const name = removeButton.getAttribute("data-name");
+  cartItems.delete(name);
+  onUpdateCartItems();
+}
+
+function onUpdateCartItems() {
+  storeCartItems();
+  const cartItemsElement = document.getElementById("cart-items");
+  let total = 0;
+  let cartItemCount = 0;
+  let innerHTML = "";
+  for (const [name, { price, quantity, image }] of cartItems) {
+    total += price * quantity;
+    cartItemCount += quantity;
+    innerHTML += newCartItemElement(
+      name,
+      price,
+      quantity,
+      image,
+    );
+  }
+  cartItemsElement.innerHTML = innerHTML;
+  const removeButtons = document.getElementsByClassName("remove-cart-item-button");
+  for (const removeButton of removeButtons) {
+    removeButton.addEventListener("click", onClickRemove);
+  }
+  const totalElement = document.getElementById("cart-total");
+  if (cartItems.size > 0) {
+    totalElement.innerText = "Total: $" + (total / 100).toFixed(2);
+    totalElement.className = "cart-total";
+  } else {
+    totalElement.innerText = "Nothing in cart";
+    totalElement.className = "cart-total-empty";
+  }
+  if (cartItems.size > 0) {
+    clearCartButton.className = "clear-cart-button-shown";
+  } else {
+    clearCartButton.className = "clear-cart-button-hidden";
+  }
+  const cartItemCounter = document.getElementById("cart-item-counter");
+  if (cartItemCount > 0) {
+    cartItemCounter.className = "cart-item-counter-shown";
+    if (cartItemCount <= 9) {
+      cartItemCounter.innerText = cartItemCount;
+    } else {
+      cartItemCounter.innerText = "~";
+    }
+  } else {
+    cartItemCounter.className = "cart-item-counter-hidden";
+    cartItemCounter.innerText = "";
+  }
+}
+
+function clearCart() {
+  cartItems.clear();
+  onUpdateCartItems();
+}
+
+document.getElementById("nav-menu-icon").addEventListener("click", toggleNavMenu);
 document.getElementById("cart-button").addEventListener("click", toggleCart);
 document.getElementById("cart-close-button").addEventListener("click", hideCart);
+
+clearCartButton.addEventListener("click", clearCart);
+
+onUpdateCartItems();

@@ -31,8 +31,9 @@ https://www.allrecipes.com/thmb/dI7tAF6NGd0Ymo8_fUAAwqnZT1Y=/0x512/filters:no_up
 https://mccormick.widen.net/content/t6sjy7wk6w/jpeg/franks_boneless_wings_og_home_plated_2024_1376x774.jpg?crop=true&anchor=0
 https://www.onceuponachef.com/images/2022/11/spinach-artichoke-dip-1-2.jpg
 
-## Cart
-https://uxwing.com/shopping-cart-white-icon/
+## Icons
+https://fonts.google.com/icons?selected=Material+Symbols+Outlined:shopping_cart:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%23FFF&icon.query=cart
+https://fonts.google.com/icons?selected=Material+Symbols+Outlined:close:FILL@0;wght@400;GRAD@0;opsz@24&icon.size=24&icon.color=%23FFF&icon.query=close
 ## Guides
 Hamburger menu, responsive nav.
 https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
