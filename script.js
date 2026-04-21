@@ -97,7 +97,15 @@ function newCartItemElement(name, price, quantity, image) {
 function onClickRemove(e) {
   const removeButton = e.currentTarget;
   const name = removeButton.getAttribute("data-name");
-  cartItems.delete(name);
+  const cartItem = cartItems.get(name);
+  if (cartItem === undefined) {
+    return;
+  }
+  if (cartItem.quantity > 1) {
+    cartItem.quantity -= 1;
+  } else {
+    cartItems.delete(name);
+  }
   onUpdateCartItems();
 }
 
