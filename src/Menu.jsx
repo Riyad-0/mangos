@@ -111,7 +111,7 @@ function MenuItem({ item, cart }) {
           <h3 className="mb-8 font-bold text-[1.2rem]">{item.name}</h3>
           <div className="mb-1">${price}</div>
           <div className="align-baseline font-bold flex justify-end gap-x-4">
-            <div>{count}</div>
+            <div className='flex items-center'>{count}</div>
             <button className="cursor-pointer px-10 py-3 text-lg font-bold rounded-sm text-white bg-[#800] hover:bg-[#600]" onClick={onClickAdd}>ADD</button>
           </div>
         </div>

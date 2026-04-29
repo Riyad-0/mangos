@@ -29,12 +29,12 @@ function Home({ cart }) {
       <Header cart={cart} onClickCartButton={onClickCartButton} />
       <CartWrapper cartOpened={cartOpened} cart={cart} closeCart={closeCart}>
         <main>
-          <div className="hero">
-            <img className="hero-image" src={heroRibeye} />
-            <div className="hero-foreground-container">
-              <div className="hero-foreground">
-                <h1 className="hero-foreground-heading">mango's</h1>
-                <Link className="view-menu-button" to="/menu">VIEW MENU</Link>
+          <div className="relative">
+            <img className="block w-full min-h-80 object-cover" src={heroRibeye} />
+            <div className="flex items-center justify-center top-0 left-0 absolute w-full h-full bg-[rgba(0,0,0,0.1)]">
+              <div className="flex flex-col gap-y-4 mb-[20%]">
+                <h1 className="text-5xl py-3 font-play font-bold text-white">mango's</h1>
+                <Link className="flex justify-center rounded-sm p-4 font-mont font-bold bg-white text-black hover:bg-[lightgray]" to="/menu">VIEW MENU</Link>
               </div>
             </div>
           </div>

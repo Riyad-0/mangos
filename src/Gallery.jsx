@@ -27,9 +27,9 @@ function Gallery() {
 
   return (
     <>
-      <div className="gallery-section">
-        <h2 className="gallery-heading">LOOK INSIDE</h2>
-        <div className="slider">
+      <div className="flex flex-col items-center bg-[#333] pb-8">
+        <h2 className="text-2xl my-7 font-mont text-white ">LOOK INSIDE</h2>
+        <div className="relative max-w-2xl">
           {images.map((image, i) => {
             const className = i === index ?
               "slider-image current-slider-image" :
