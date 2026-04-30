@@ -22,7 +22,7 @@ function Header({ cart, onClickCartButton }) {
       {/* Hamburger menu icon */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       <header className="flex items-center justify-between w-full bg-black text-white text-[1.8rem] px-5 py-3">
-        <a href="javascript:void(0);" className="nav-menu-icon" onClick={onClickNavMenuButton}>
+        <a className="nav-menu-icon" onClick={onClickNavMenuButton}>
           <i className="fa fa-bars"></i>
         </a>
         <Link className="flex items-center gap-x-3 text-white" to="/">
@@ -39,10 +39,10 @@ function Header({ cart, onClickCartButton }) {
             <Link className="header-nav-link" to="/about">ABOUT</Link>
             <Link className="header-nav-link" to="/contact">CONTACT</Link>
           </nav>
-          <button className="bg-black cursor-pointer relative" id="cart-button" onClick={onClickCartButton}>
+          <button className="bg-black cursor-pointer relative" onClick={onClickCartButton}>
             <img className="w-12" alt="shopping cart" src={cartIcon} />
             {cart.count() > 0 ?
-              <div className="cart-item-counter flex absolute bottom-2 right-0 bg-[#f00] justify-center items-center w-4 h-4 rounded-lg text-white font-mont" id="cart-item-counter">
+              <div className="flex absolute bottom-2 right-0 bg-[#f00] justify-center items-center w-4 h-4 rounded-lg text-white font-mont text-[0.8rem] font-bold" id="cart-item-counter">
                 {cart.count() < 10 ?
                   `${cart.count()}` :
                   ""

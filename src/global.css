@@ -21,6 +21,7 @@
   color: white;
   text-decoration: none;
   font-size: 2.2rem;
+  cursor: pointer;
 }
 
 .header-nav {
@@ -39,32 +40,6 @@
 
 .header-nav-link:hover {
   text-decoration: underline;
-}
-
-.cart-button {
-  background: black;
-  cursor: pointer;
-  border: none;
-  position: relative;
-}
-
-.cart-item-counter {
-  display: flex;
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0;
-  background: #f00;
-  justify-content: center;
-  align-items: center;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 0.5rem;
-  color: white;
-  font-family: 'Montserrat Variable', sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 0.8rem;
-  font-weight: bold;
 }
 
 /* Even if the nav menu was opened on a smaller screen, we want it to be hidden
@@ -87,198 +62,7 @@ when the screen is resized to be wider. */
   text-decoration: underline;
 }
 
-.cart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 1000px;
-  font-family: 'Montserrat Variable', sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 1rem;
-}
-
-.cart-close-button-container {
-  display: flex;
-  justify-content: end;
-  padding: 12px 20px 0 20px;
-  width: 100%;
-  position: absolute;
-}
-
-.cart-close-button {
-  display: flex;
-  border: none;
-  background: inherit;
-  /* background: #eee; */
-  width: 3rem;
-  height: 3rem;
-  /* border-radius: 1.5rem; */
-  cursor: pointer;
-}
-
-/* .cart-close-button:hover {
-  background: #ddd;
-} */
-
-.cart-main {
-  width: 500px;
-  padding: 0 8px;
-  max-width: 100%;
-}
-
-.cart-items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 12px;
-}
-
-.cart-item {
-  display: flex;
-  border-radius: 5px;
-  width: 100%;
-  /* width: 800px; */
-  /* max-width: 100%; */
-  /* max-width: 100%; */
-  /* width: 100%; */
-  /* max-width: 20%; */
-  /* width: 200px;
-  height: 100px; */
-  background: #f2efea;
-  overflow: hidden;
-  /* width: 500px; */
-}
-
-.cart-item > img {
-  width: 100px;
-
-  object-fit: cover;
-  /* height: 64px; */
-  /* object-fit: contain; */
-}
-
-.cart-item-right {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
-  padding: 16px;
-}
-
-.cart-item-text-container {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  row-gap: 8px;
-  font-size: 0.9rem;
-}
-
-.cart-item-name {
-  font-size: 1rem;
-}
-
-.cart-item-quantity {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 1ch;
-}
-
-.remove-cart-item-button-container {
-  display: flex;
-  height: 100%;
-  align-items: center;
-}
-
-.remove-cart-item-button {
-  display: flex;
-  border: none;
-  background: #f00;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.remove-cart-item-button:hover {
-  background: #d00;
-}
-
-.remove-cart-item-button > img {
-  color: white;
-}
-
-.cart-total-empty {
-  display: flex;
-  justify-content: center;
-  margin-top: 8px;
-}
-
-.cart-total {
-  display: flex;
-  justify-content: start;
-  margin-top: 8px;
-  font-weight: bold;
-}
-
-.clear-cart-button-container {
-  display: flex;
-  justify-content: end;
-  width: 100%;
-}
-
-.clear-cart-button {
-  margin: 8px 0;
-  padding: 12px;
-  /* width: fit-content; */
-  /* font-weight: bold; */
-  /* background: #800; */
-  border-radius: 5px;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-.clear-cart-button:hover {
-  /* background: #600; */
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  row-gap: 16px;
-  padding: 16px;
-  background: dimgray;
-  color: white;
-
-  font-family: 'Montserrat Variable', sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 1rem;
-}
-
-.footer-heading {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.business-hours-day {
-  padding-right: 16px;
-  margin-left: auto;
-}
-
-.social-logos-container {
-  display: flex;
-  column-gap: 16px;
-}
-
-.social-logo {
-  width: 1.6rem;
-}
-
 /* index.html */
-
 .slider-image {
   display: none;
   width: 100%;
@@ -286,41 +70,6 @@ when the screen is resized to be wider. */
 
 .current-slider-image {
   display: block;
-}
-
-.slider-foreground {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.slider-prev-button, .slider-next-button {
-  cursor: pointer;
-  font-size: 1.4rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.7);
-  user-select: none;
-}
-
-.slider-prev-button:hover, .slider-next-button:hover {
-  font-size: 1.4rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.9);
-}
-
-.slider-prev-button {
-  border-radius: 0 1rem 1rem 0;
-  padding: 0.6rem 0.8rem 0.6rem 0.5rem;
-}
-
-.slider-next-button {
-  border-radius: 1rem 0 0 1rem;
-  padding: 0.6rem 0.5rem 0.6rem 0.8rem;
 }
 
 /* about.html, contact.html, menu.html */
@@ -358,9 +107,6 @@ when the screen is resized to be wider. */
 .contact-form > * {
   width: 100%;
   padding: 3px;
-}
-.contact-form > input {
-  margin-bottom: 16px;
 }
 
 /* media queries */

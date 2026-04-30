@@ -28,9 +28,9 @@ function Contact({ cart }) {
           <h1 className="page-heading">Contact</h1>
           <form className="contact-form font-mont max-w-full px-1 w-xs">
             <label htmlFor="name">Name:</label><br />
-            <input className='border border-gray-400 rounded-xs' name="name" /><br />
+            <input className='mb-4 border border-gray-400 rounded-xs' name="name" /><br />
             <label htmlFor="email">Email:</label><br />
-            <input className='border border-gray-400 rounded-xs' name="email" type="email" /><br />
+            <input className='mb-4 border border-gray-400 rounded-xs' name="email" type="email" /><br />
             <label htmlFor="message">Message:</label><br />
             <textarea className='border border-gray-400 rounded-xs' name="message"></textarea><br />
             <button className="font-mont bg-gray-300 rounded-xs" type="submit">Submit</button>

@@ -36,9 +36,9 @@ function Gallery() {
               "slider-image";
             return (<img className={className} alt={image.alt} src={image.src} key={image.src} />);
           })}
-          <div className="slider-foreground">
-            <a className="slider-prev-button" id="slider-prev-button" onClick={onClickPrev}>&#10094;</a>
-            <a className="slider-next-button" id="slider-next-button" onClick={onClickNext}>&#10095;</a>
+          <div className="flex justify-between items-center absolute left-0 top-0 w-full h-full">
+            <a className="cursor-pointer text-[1.4rem] text-white bg-[rgba(0,0,0,0.7)] select-none hover:bg-[rgba(0,0,0,0.9)] py-[0.6rem] pr-[0.8rem] pl-[0.5rem] rounded-r-2xl" onClick={onClickPrev}>&#10094;</a>
+            <a className="cursor-pointer text-[1.4rem] text-white bg-[rgba(0,0,0,0.7)] select-none hover:bg-[rgba(0,0,0,0.9)] py-[0.6rem] pr-[0.5rem] pl-[0.8rem] rounded-l-2xl" onClick={onClickNext}>&#10095;</a>
           </div>
         </div>
       </div>
