@@ -17,6 +17,7 @@ import Contact from './Contact';
 
 function InsideRouter() {
   const [cartItems, setCartItems] = useState(/** @type {Map<string, CartItem>} */(loadCartItems()));
+
   /** @type {Cart} */
   const cart = {
     items: cartItems,
@@ -26,6 +27,7 @@ function InsideRouter() {
       const quantity = (existing === undefined) ? 1 : (existing.quantity + 1);
       newCartItems.set(item.name, { ...item, quantity });
       setCartItems(newCartItems);
+      updateCart(newCartItems);
     },
     remove(name) {
       const existing = cartItems.get(name);
@@ -37,9 +39,16 @@ function InsideRouter() {
         newCartItems.delete(existing.name);
       }
       setCartItems(newCartItems);
+      updateCart(newCartItems);
     },
     clear() {
-      setCartItems(new Map());
+      const newCartItems = new Map();
+      setCartItems(newCartItems);
+      updateCart(newCartItems);
+    },
+    clearLocally() {
+      const newCartItems = new Map();
+      setCartItems(newCartItems);
     },
     list() {
       return [...cartItems.values()];
@@ -51,6 +60,7 @@ function InsideRouter() {
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify([...cartItems]));
   }, [cartItems]);
+
   return (
     <>
       {/* <Link to="/profile">profile</Link> */}
@@ -83,6 +93,24 @@ function loadCartItems() {
   } else {
     return new Map(JSON.parse(serializedCartItems));
   }
+}
+
+async function updateCart(cartItems) {
+  const items = [...cartItems.values()].map(item => {
+    return {
+      name: item.name,
+      quantity: item.quantity,
+    };
+  });
+  await fetch("/api/cart", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      items
+    }),
+  })
 }
 
 export default App;

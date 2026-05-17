@@ -9,5 +9,6 @@
  *   add: (item: MenuItem) => void
  *   remove: (name: string) => void
  *   clear: () => void
+ *   clearLocally: () => void
  * }} Cart;
  */
