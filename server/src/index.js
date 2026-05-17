@@ -36,6 +36,13 @@ app.get('/api/menu/fill', async (req, res) => {
 app.post('/api/cart', async (req, res) => {
   const sessionId = req.cookies.session;
   const items = req.body.items;
+  if (items.length === 0) {
+    if (typeof sessionId === "string" && sessionId.length <= 24) {
+      await Cart.findByIdAndDelete(sessionId);
+    }
+    res.json({ result: "success" });
+    return;
+  }
   const cart = (typeof sessionId === "string" && sessionId.length <= 24) ?
     await Cart.findByIdAndUpdate(sessionId, { items }, { upsert: true }) :
     await Cart.insertOne({ items });
@@ -48,6 +55,11 @@ app.post('/api/cart', async (req, res) => {
 });
 
 app.post('/api/order', async (req, res) => {
+  const sessionId = req.cookies.session;
+  if (typeof sessionId === "string" && sessionId.length <= 24) {
+    await Cart.findByIdAndDelete(sessionId);
+  }
+  
   const items = req.body.items;
 
   const order = await Order.insertOne({ items });
