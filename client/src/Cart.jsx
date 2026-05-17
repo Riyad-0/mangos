@@ -1,3 +1,4 @@
+import { useState } from "react";
 import blackCloseIcon from "./assets/x-icon-black.svg";
 import whiteCloseIcon from "./assets/x-icon-white.svg";
 /** @import { CartItem } from "./types/CartItem" */
@@ -29,7 +30,30 @@ function totalText(cart) {
  * @returns 
  */
 function Cart({ cart, closeCart }) {
+  const [orderPlaced, setOrderPlaced] = useState(false);
   const total = totalText(cart);
+  async function order() {
+    const items = cart.list().map(item => {
+      return {
+        name: item.name,
+        quantity: item.quantity,
+      };
+    });
+    await fetch("/api/order", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        items,
+      })
+    });
+    cart.clearLocally();
+    setOrderPlaced(true);
+    setTimeout(() => {
+      setOrderPlaced(false);
+    }, 3000);
+  }
   return (
     <>
       <div className="flex flex-col items-center min-h-250 font-mont" id="cart">
@@ -44,13 +68,16 @@ function Cart({ cart, closeCart }) {
           <div className="flex flex-col items-center gap-y-3" id="cart-items">
             {cart.list().map(item => (<CartItem item={item} cart={cart} key={item.name} />))}
           </div>
-          <Total cart={cart} />
-          <div className="flex justify-between w-full">
+          <Total cart={cart} orderPlaced={orderPlaced} />
+          <div className="mt-1.5 flex justify-between items-start w-full">
             {cart.items.size === 0 ?
               <></> :
               <>
-                <button className="my-2 p-3 rounded-[5px] text-white cursor-pointer font-bold bg-[#800] hover:bg-[#600]" onClick={cart.clear}>
+                <button className="px-3 py-1.5 rounded-[5px] text-white cursor-pointer font-bold bg-[#800] hover:bg-[#600]" onClick={cart.clear}>
                   CLEAR CART
+                </button>
+                <button className="px-8 py-3 rounded-[5px] text-white text-2xl cursor-pointer font-bold bg-[#800] hover:bg-[#600]" onClick={order}>
+                  ORDER
                 </button>
               </>
             }
@@ -100,10 +127,15 @@ function CartItem({ item: { name, image, price, quantity }, cart }) {
 
 /**
  * 
- * @param {{ cart: CartData }} props
+ * @param {{ cart: CartData, orderPlaced: boolean }} props
  */
-function Total({ cart }) {
+function Total({ cart, orderPlaced }) {
   if (cart.count() === 0) {
+    if (orderPlaced) {
+      return (
+        <div className="flex justify-center mt-2">Order placed!</div>
+      );
+    }
     return (
       <div className="flex justify-center mt-2">Nothing in cart</div>
     );
