@@ -55,7 +55,7 @@ export async function getMenu() {
         return {
           _id: dbItem._id,
           name: dbItem.name,
-          image: "/src/assets/" + dbItem.image,
+          image: dbItem.image,
           price: dbItem.price,
         };
       }))

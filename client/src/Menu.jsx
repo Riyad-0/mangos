@@ -16,7 +16,19 @@ async function fetchMenu() {
   const res = await fetch("/api/menu");
   const body = await res.json();
   if (body.result === "success") {
-    return body.menu;
+    /** @type {MenuSection[]} */
+    const dbMenu = body.menu;
+    return dbMenu.map(section => {
+      return {
+        ...section,
+        items: section.items.map(item => {
+          return {
+            ...item,
+            image: "/" + item.image
+          };
+        }),
+      };
+    });
   } else {
     return null;
   }

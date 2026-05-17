@@ -45,12 +45,14 @@ function Cart({ cart, closeCart }) {
             {cart.list().map(item => (<CartItem item={item} cart={cart} key={item.name} />))}
           </div>
           <Total cart={cart} />
-          <div className="flex justify-end w-full">
+          <div className="flex justify-between w-full">
             {cart.items.size === 0 ?
               <></> :
-              <button className="my-2 p-3 rounded-[5px] text-white cursor-pointer font-bold bg-[#800] hover:bg-[#600]" onClick={cart.clear}>
-                CLEAR CART
-              </button>
+              <>
+                <button className="my-2 p-3 rounded-[5px] text-white cursor-pointer font-bold bg-[#800] hover:bg-[#600]" onClick={cart.clear}>
+                  CLEAR CART
+                </button>
+              </>
             }
           </div>
         </div>
