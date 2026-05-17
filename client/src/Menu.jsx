@@ -61,7 +61,10 @@ function Menu({ cart }) {
       <CartWrapper cartOpened={cartOpened} cart={cart} closeCart={onClickCloseCartButton}>
         <main className="page-main-content">
           <h1 className="page-heading">MENU</h1>
-          {sections && sections.map(section => (<MenuSection section={section} cart={cart} key={section.heading} />))}
+          {sections ?
+            sections.map(section => (<MenuSection section={section} cart={cart} key={section.heading} />)) :
+            <div className='flex ml-[1.4ch] mb-16 pb-16 text-gray-500 items-center mt-4 text-2xl font-bold'>Loading...</div>
+          }
         </main>
       </CartWrapper>
       <Footer />
