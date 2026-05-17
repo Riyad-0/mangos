@@ -1,16 +1,7 @@
 import Footer from './Footer';
 import Header from './Header';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CartWrapper from './CartWrapper';
-import crunchyFriedShrimpImage from "./assets/crunchy-fried-shrimp.jpg";
-import bonelessWingsImage from "./assets/boneless-wings.jpg";
-import spinachArtichokeDipImage from "./assets/spinach-artichoke-dip.jpg";
-import ribeyeImage from "./assets/ribeye.jpg";
-import filetMignonImage from "./assets/filet-mignon.avif";
-import newYorkStripImage from "./assets/new-york-strip.jpg";
-import sirloinImage from "./assets/sirloin.webp";
-/** @import { AddItem } from "./types/AddItem" */
-/** @import { CartItem } from "./types/CartItem" */
 /** @import { MenuItem } from "./types/MenuItem" */
 /** @import { Cart } from "./types/Cart" */
 
@@ -21,26 +12,15 @@ import sirloinImage from "./assets/sirloin.webp";
  * }} MenuSection
  */
 
-/** @type {MenuSection[]} */
-const sections = [
-  {
-    heading: "Appetizers",
-    items: [
-      { name: "Crunchy Fried Shrimp", image: crunchyFriedShrimpImage, price: 999 },
-      { name: "Boneless Wings", image: bonelessWingsImage, price: 1099 },
-      { name: "Spinach Artichoke Dip", image: spinachArtichokeDipImage, price: 799 },
-    ]
-  },
-  {
-    heading: "Steaks",
-    items: [
-      { name: "Ribeye", image: ribeyeImage, price: 2699 },
-      { name: "Filet Mignon", image: filetMignonImage, price: 2499 },
-      { name: "New York Strip", image: newYorkStripImage, price: 2499 },
-      { name: "Sirloin", image: sirloinImage, price: 2199 },
-    ]
+async function fetchMenu() {
+  const res = await fetch("/api/menu");
+  const body = await res.json();
+  if (body.result === "success") {
+    return body.menu;
+  } else {
+    return null;
   }
-];
+}
 
 /**
  * 
@@ -48,6 +28,11 @@ const sections = [
  */
 function Menu({ cart }) {
   const [cartOpened, setCartOpened] = useState(false);
+  const [sections, setSections] = useState(/** @type {MenuSection[] | null} */ (null));
+
+  useEffect(() => {
+    fetchMenu().then(setSections);
+  }, []);
   function onClickCartButton() {
     setCartOpened(!cartOpened);
   }
@@ -64,7 +49,7 @@ function Menu({ cart }) {
       <CartWrapper cartOpened={cartOpened} cart={cart} closeCart={onClickCloseCartButton}>
         <main className="page-main-content">
           <h1 className="page-heading">MENU</h1>
-          {sections.map(section => (<MenuSection section={section} cart={cart} key={section.heading} />))}
+          {sections && sections.map(section => (<MenuSection section={section} cart={cart} key={section.heading} />))}
         </main>
       </CartWrapper>
       <Footer />
